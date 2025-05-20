@@ -1,0 +1,37 @@
+﻿body , .gradient-background{
+    background: linear-gradient(300deg, #33003A, #F30030, #323996);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gifContainer {
+    border-radius: 20px;
+}
+.testsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.testsPara{
+    text-align:left;
+}
+hr{
+    opacity: 0.8;
+    border-top: 6px solid white;
+    border-radius: 6px;
+}
