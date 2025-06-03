@@ -10,10 +10,10 @@ namespace Onyx.Data.EntityConfigurations
         {
             builder.HasKey(q => q.Id);
             builder.Property(q => q.Title).IsRequired().HasMaxLength(100);
-            builder.Property(q => q.AswerA).IsRequired().HasMaxLength(100);
-            builder.Property(q => q.AswerB).IsRequired().HasMaxLength(100);
-            builder.Property(q => q.AswerC).IsRequired().HasMaxLength(100);
-            builder.Property(q => q.AswerD).IsRequired().HasMaxLength(100);
+            builder.Property(q => q.AnswerA).IsRequired().HasMaxLength(100);
+            builder.Property(q => q.AnswerB).IsRequired().HasMaxLength(100);
+            builder.Property(q => q.AnswerC).IsRequired().HasMaxLength(100);
+            builder.Property(q => q.AnswerD).IsRequired().HasMaxLength(100);
             builder.Property(q => q.CorrectAnswer).IsRequired().HasMaxLength(1);
             builder.Property(q => q.Completed);
             builder.Property(q => q.QuestionNumber).IsRequired();

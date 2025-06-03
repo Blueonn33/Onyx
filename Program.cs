@@ -20,6 +20,7 @@ namespace Onyx
             {
                 options.SignIn.RequireConfirmedAccount = false;
             })
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.AddScoped<IQuizRepository, QuizRepository>();
@@ -36,6 +37,14 @@ namespace Onyx
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
+            }
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var configuration = services.GetRequiredService<IConfiguration>();
+                RoleSeeder.SeedRolesAsync(services).Wait();
+                UserSeeder.SeedUsersAsync(services, configuration).Wait();
             }
 
             app.UseHttpsRedirection();

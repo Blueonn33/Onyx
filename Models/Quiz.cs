@@ -7,7 +7,7 @@ namespace Onyx.Models
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public int TimeLimit { get; set; } // в минути
+        public int TimeLimit { get; set; } = 3;// в минути
         public byte[]? ImageData { get; set; }
         public string? ImageMimeType { get; set; }
         public bool Completed { get; set; } = false;

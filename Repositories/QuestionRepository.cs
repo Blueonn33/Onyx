@@ -43,12 +43,6 @@ namespace Onyx.Repositories
             }
 
             var questions = await _context.Questions.Where(q => q.QuizId == quizId).ToListAsync();
-
-            if (questions == null || questions.Count == 0)
-            {
-                throw new KeyNotFoundException($"Въпроси с ID {quizId} на тест не са намерени.");
-            }
-
             return questions;
         }
 
