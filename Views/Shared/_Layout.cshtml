@@ -17,13 +17,13 @@
         footer{
             font-size: 23px;
             text-align: center;
-            background-color: #600013 !important;
+            background-color: #A7C99B !important;
         }
         .nav-link {
             color: white !important;
         }
         .navbar {
-            background-color: #600013 !important;
+            background-color: #A7C99B !important;
         }
     </style>
 </head>
@@ -39,24 +39,24 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item identityBtn">
-                             <a class="nav-link text-light fs-4" asp-area="" asp-controller="Home" asp-action="Index">Начало</a>
+                             <a class="nav-link text-light fs-4 fw-bolder" asp-area="" asp-controller="Home" asp-action="Index">Начало</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light fs-4" asp-area="" asp-controller="Quizzes" asp-action="Index">Тестове</a>
+                        <li class="nav-item identityBtn">
+                            <a class="nav-link text-light fs-4 fw-bolder" asp-area="" asp-controller="Quizzes" asp-action="Index">Тестове</a>
                         </li>
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item identityBtn">
-                                <a class="nav-link text-light fs-4 text-end" asp-area="Identity" asp-page="/Account/Logout">Изход</a>
+                                <a class="nav-link text-light fs-4 text-end fw-bolder" asp-area="Identity" asp-page="/Account/Logout">Изход</a>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item identityBtn">
-                                <a class="nav-link text-light fs-4 text-end" asp-area="Identity" asp-page="/Account/Login">Вход</a>
+                                <a class="nav-link text-light fs-4 text-end fw-bolder" asp-area="Identity" asp-page="/Account/Login">Вход</a>
                             </li>
                             <li class="nav-item identityBtn">
-                                <a class="nav-link text-light fs-4 text-end" asp-area="Identity" asp-page="/Account/Register">Регистрация</a>
+                                <a class="nav-link text-light fs-4 text-end fw-bolder" asp-area="Identity" asp-page="/Account/Register">Регистрация</a>
                             </li>
                         }
                     </ul>
@@ -69,7 +69,7 @@
             @RenderBody()
         </main>
     </div>
-    <footer class="border-top footer text-light">
+    <footer class="border-top footer text-light fw-bolder">
         <div class="container">
             &copy; 2025 Мартин Маринов 
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-feather" viewBox="0 0 16 16">

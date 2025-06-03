@@ -1,0 +1,55 @@
+﻿@using Onyx.ViewModels
+@{
+    ViewData["Title"] = "Създаване на въпрос";
+}
+@model QuestionViewModel;
+
+<head>
+    <style>
+        h1{
+            color: #A7C99B;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Създаване на въпрос</h1>
+    <div class="container">
+        <form method="post" asp-action="Create" asp-controller="Questions">
+            <input type="hidden" name="quizId" value="@ViewBag.quizId" />
+            <div class="container mb-3">
+                <label asp-for="Title" class="fs-5 form-label">Въпрос</label>
+                <input asp-for="Title" class="form-control" />
+            </div>
+            <div class="container mb-3">
+                <label asp-for="AnswerA" class="fs-5 form-label">Отговор A</label>
+                <input asp-for="AnswerA" class="form-control" />
+            </div>
+            <div class="container mb-3">
+                <label asp-for="AnswerB" class="fs-5 form-label">Отговор B</label>
+                <input asp-for="AnswerB" class="form-control" />
+            </div>
+            <div class="container mb-3">
+                <label asp-for="AnswerC" class="fs-5 form-label">Отговор C</label>
+                <input asp-for="AnswerC" class="form-control" />
+            </div>
+            <div class="container mb-3">
+                <label asp-for="AnswerD" class="fs-5 form-label">Отговор D</label>
+                <input asp-for="AnswerD" class="form-control" />
+            </div>
+            <div class="container mb-3">
+                <label asp-for="CorrectAnswer" class="fs-5 form-label">Верен отговор</label>
+                <input asp-for="CorrectAnswer" class="form-control" placeholder="Въведете буквата на верния отговор: А"/>
+            </div>
+            <div class="container mb-3">
+                <label asp-for="QuestionNumber" class="fs-5 form-label">Номер на въпрос</label>
+                <input asp-for="QuestionNumber" class="form-control" />
+            </div>
+            <div class="container">
+                <a class="btn btn-success" asp-action="Index" asp-controller="Questions" 
+                    asp-route-quizId="@ViewBag.quizId">Назад</a>
+                <button type="submit" class="btn btn-success">Създай</button>
+            </div>
+        </form>
+    </div>
+</body>

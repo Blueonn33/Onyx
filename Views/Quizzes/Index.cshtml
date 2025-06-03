@@ -1,18 +1,76 @@
 ﻿@{
     ViewData["Title"] = "Тестове";
 }
+@model IEnumerable<Quiz>
 
 <head>
     <style>
         body{
-            background-color: #D3D6DB;
+            background-color: white;
         }
-        h1{
+        .heading{
             text-align: center;
-            color: #600013;
+            color: #A7C99B;
+            font-weight: bold;
+            font-size: 3rem;
+        }
+        .card{
+            background-color: #687B61;
+        }
+        .quizImage{
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+        }
+        .quizInfo{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+        .quizBtns{
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: end;
+            gap: 10px;
+        }
+        .quizBtns a{
+            padding: 10px 70px;
         }
     </style>
 </head>
 <body>
-    <h1 class="fs-1">Тестове</h1>
+    <h1 class="heading">Тестове</h1>
+    <a asp-action="Create" asp-controller="Quizzes" class="btn btn-success">Създай тест</a>
+    <div class="container">
+        <div>
+            @foreach(var quiz in Model)
+            {
+                <div class="card col m-3" style="width: 100%; height: 300px; padding: 1rem">
+                    <div class="row">
+                        <div class="col-4">
+                            <h3 class="card-title text-start text-light mb-3">@quiz.Title</h3>
+                            @if (quiz.ImageData != null)
+                            {
+                                <img src="@Url.Action("GetImage", "Quizzes", new { quizId = quiz.Id })"
+                                     class="img-thumbnail quizImage"
+                                     alt="Снимка на тест" />
+                            }
+                        </div>
+                        <div class="col-4 quizInfo">
+                            <h5 class="text-center text-light">Време: @quiz.TimeLimit мин.</h5>
+                            <h5 class="text-center text-light">Брой въпроси: 10</h5>
+                        </div>
+                        <div class="col-4 quizBtns">
+                            <a class="btn btn-success" asp-action="Index" asp-controller="Questions" 
+                                asp-route-quizId="@quiz.Id">
+                                Редактирай</a>
+                            <a class="btn btn-success">Започни</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </body>

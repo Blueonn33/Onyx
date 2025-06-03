@@ -1,7 +1,7 @@
-﻿body , .gradient-background{
-    background: linear-gradient(300deg, #33003A, #F30030, #323996);
+﻿body, .gradient-background {
+    background: linear-gradient(300deg, #687B61, #B1CFA7, white);
     background-size: 180% 180%;
-    animation: gradient-animation 18s ease infinite;
+    animation: gradient-animation 13s ease infinite;
 }
 
 @keyframes gradient-animation {
@@ -19,6 +19,7 @@
 }
 
 .gifContainer {
+    margin-top: 100px;
     border-radius: 20px;
 }
 .testsContainer {
@@ -27,11 +28,28 @@
     justify-content: start;
     align-items: start;
 }
-.testsPara{
-    text-align:left;
+.testsPara {
+    text-align: left;
+    font-weight: 400;
 }
 hr{
     opacity: 0.8;
     border-top: 6px solid white;
     border-radius: 6px;
+}
+#testsHeading {
+    color: #A7C99B;
+}
+.documentation{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px;
+}
+.documentationContent{
+    text-align: left;
+}
+.forum{
+    border: 6px solid white;
+    border-radius: 10px;
+    padding: 20px;
 }
