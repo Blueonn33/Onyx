@@ -11,8 +11,12 @@ namespace Onyx.Data
         : base(options)
         {
         }
+
         public DbSet<Quiz> Quizzes { get; set; }
         public DbSet<Question> Questions { get; set; }
+        public DbSet<Tutorial> Tutorials { get; set; }
+        public DbSet<Section> Sections { get; set; }
+        public DbSet<SectionItem> SectionItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -20,6 +24,9 @@ namespace Onyx.Data
 
             builder.ApplyConfiguration(new QuizEntityConfiguration());
             builder.ApplyConfiguration(new QuestionEntityConfiguration());
+            builder.ApplyConfiguration(new TutorialEntityConfiguration());
+            builder.ApplyConfiguration(new SectionEntityConfiguration());
+            builder.ApplyConfiguration(new SectionItemEntityConfiguration());
         }
     }
 }

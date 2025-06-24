@@ -10,12 +10,12 @@
         }
         .heading{
             text-align: center;
-            color: #A7C99B;
+            color: #1E1E1E;
             font-weight: bold;
             font-size: 3rem;
         }
         .card{
-            background-color: #687B61;
+            background-color: #006B6B;
         }
         .quizImage{
             width: 200px;
@@ -35,14 +35,25 @@
             align-items: end;
             gap: 10px;
         }
-        .quizBtns a{
+        .quizBtn{
             padding: 10px 70px;
+            background-color: #00A9A9;
+            color: white;
+        }
+        .quizBtn:hover {
+            border: 6px solid #00A9A9;
+            background-color: white;
+            color: #00A9A9;
+            padding: 4px 64px;
+        }
+        .footer, .navbar{
+            background-color: #1E1E1E !important;
         }
     </style>
 </head>
 <body>
     <h1 class="heading">Тестове</h1>
-    <a asp-action="Create" asp-controller="Quizzes" class="btn btn-success">Създай тест</a>
+    <a asp-action="Create" asp-controller="Quizzes" class="ms-4 btn quizBtn">Създай тест</a>
     <div class="container">
         <div>
             @foreach(var quiz in Model)
@@ -63,10 +74,10 @@
                             <h5 class="text-center text-light">Брой въпроси: 10</h5>
                         </div>
                         <div class="col-4 quizBtns">
-                            <a class="btn btn-success" asp-action="Index" asp-controller="Questions" 
-                                asp-route-quizId="@quiz.Id">
+                            <a class="btn quizBtn" asp-action="Index" asp-controller="Questions"
+                               asp-route-quizId="@quiz.Id">
                                 Редактирай</a>
-                            <a class="btn btn-success">Започни</a>
+                            <a class="btn quizBtn">Започни</a>
                         </div>
                     </div>
                 </div>
