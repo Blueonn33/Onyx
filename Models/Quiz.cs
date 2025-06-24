@@ -11,8 +11,10 @@ namespace Onyx.Models
         public byte[]? ImageData { get; set; }
         public string? ImageMimeType { get; set; }
         public bool Completed { get; set; } = false;
-        public string UserId { get; set; }
+
         [ForeignKey(nameof(UserId))]
+        public string UserId { get; set; }
+
         public IdentityUser User { get; set; }
         public ICollection<Question> Questions { get; set; }
     }
